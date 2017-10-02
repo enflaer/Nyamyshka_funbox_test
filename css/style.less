@@ -1,0 +1,367 @@
+@background: url('../images/pattern.jpg') repeat;
+@font_header:exo2;
+@font_primary: Trebuchet MS, Verdana, Arial;
+@border: 4px solid @color_light-blue;
+@border-disabled: 4px solid @color_disabled;
+@border-hover: 4px solid @color_light-blue-hover;
+@border-selected: 4px solid @color_pink;
+@border-selected-hover: 4px solid @color_pink-hover;
+@color_pink: #d91667;
+@color_pink-hover: #e62e7a;
+@color_light-blue: #1698d9;
+@color_light-blue-hover: #2ea8e6;
+@color_white: #fff;
+@color_black: #000;
+@color_text-notice: #939393;
+@color_yellow:#dddd57;
+@color_disabled: #b3b3b3;
+
+html,
+body
+{
+    font-family: @font_primary;
+
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+article
+{
+    display: inline-block;
+}
+
+.background-pattern
+{
+    background: @background;
+}
+
+.wrapper
+{
+    position: relative;
+
+    display: table;
+
+    width: 100%;
+    height: 100%;
+}
+
+.va-wrapper
+{
+    display: table-cell;
+
+    width: 100%;
+    height: 100%;
+
+    text-align: center;
+    vertical-align: middle;
+}
+
+.title
+{
+    font-family: @font_header;
+    font-weight: 100;
+
+    text-align: center;
+
+    color: @color_white;
+}
+.disabled
+{
+    border: @border-disabled !important;
+    cursor: default;
+    pointer-events: none;
+    .item__weight
+    {
+        background-color: #b3b3b3;
+    }
+    .tl-corner
+    {
+        border-left: 3px solid #b3b3b3;
+    }
+    .tl-corner:after,
+    .tl-corner:before
+    {
+        border-top: 4px solid #b3b3b3;
+    }
+    .item__bg
+    {
+    .grayscale100;
+    }
+}
+.cat-box
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 325px;
+    height: 480px;
+    margin: 50px 40px 20px 40px;
+
+    cursor: pointer;
+    vertical-align: top;
+
+    border: @border;
+    background: @color_white;
+
+    .rounded-border(15px, 80px);
+}
+.cat-box__selected
+{
+    border: @border-selected;
+    .item__weight
+    {
+        background-color: @color_pink;
+    }
+    .tl-corner
+    {
+        border-left: 3px solid @color_pink;
+    }
+    .tl-corner:after,
+    .tl-corner:before
+    {
+        border-top: 4px solid @color_pink;
+    }
+}
+.cat-box-hover
+{
+    border: @border-hover;
+    .item__weight
+    {
+        background-color: @color_light-blue-hover;
+    }
+    .tl-corner
+    {
+        border-left: 3px solid @color_light-blue-hover;
+    }
+    .tl-corner:after,
+    .tl-corner:before
+    {
+        border-top: 4px solid @color_light-blue-hover;
+    }
+}
+.cat-box__selected-hover
+{
+    border: @border-selected-hover;
+    .item__weight
+    {
+        background-color: @color_pink-hover;
+    }
+    .tl-corner
+    {
+        border-left: 3px solid @color_pink-hover;
+    }
+    .tl-corner:after,
+    .tl-corner:before
+    {
+        border-top: 4px solid @color_pink-hover;
+    }
+}
+
+
+.tl-corner
+{
+    position: absolute;
+    top: 9px;
+    left: 9px;
+
+    width: 64px;
+    height: 64px;
+
+    content: '';
+    transform: rotate(45deg);
+
+    border-left: 3px solid @color_light-blue;
+    border-radius: 1px;
+    background: @color_white;
+}
+
+.tl-corner:before
+{
+    transform: rotate(-45deg)translate(48%,-22%);
+}
+
+.tl-corner:after
+{
+    transform: rotate(-135deg)translate(-48%,-22%);
+}
+
+.tl-corner:after,
+.tl-corner:before
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    content: '';
+
+    border-top: 4px solid @color_light-blue;
+    background: @color_white;
+}
+
+.item__info
+{
+    line-height: 1;
+
+    position: relative;
+    z-index: 1;
+
+    text-align: left;
+}
+
+.item__description
+{
+    font-size: 16px;
+
+    margin: 15px 0 0 45px;
+
+    color: @color_text-notice;
+}
+
+.item__name
+{
+    font-size: 48px;
+    font-weight: bold;
+
+    margin: 12px 0 0 45px;
+}
+.item__subname
+{
+    font-size: 24px;
+    font-weight: bold;
+
+    margin: 6px 0 0 47px;
+}
+.item__includes
+{
+    font-size: 14px;
+
+    margin: 17px 0 0 6px;
+
+    list-style: none;
+
+    color: @color_text-notice;
+}
+.item__bg
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+    background: url('../images/cat.png') no-repeat;
+    background-position: left -20px bottom -90px;
+}
+.item__weight
+{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+
+    width: 80px;
+    height: 80px;
+
+    color: @color_white;
+    border-radius: 50%;
+    background-color: @color_light-blue;
+}
+
+.item__weight_text
+{
+    font-size: 42px;
+    line-height: .9;
+
+    margin-top: 12px;
+}
+.item__weight_subtext
+{
+    font-size: 21px;
+
+    margin-top: -12px;
+}
+.buy-item
+{
+    font-size: 13px;
+
+    position: absolute;
+    bottom: -45px;
+
+    display: none;
+
+    width: 325px;
+
+    cursor: default;
+
+    color: @color_white;
+
+    .grayscale0;
+    // margin: 0 40px 20px 40px;
+}
+.buy-item-fuagra-disabled,
+.buy-item-fish-disabled,
+.buy-item-chicken-disabled,
+{
+    color: @color_yellow;
+
+    .grayscale0;
+}
+
+.buy-item__link
+{
+    cursor: pointer;
+
+    border-bottom: 1px dashed;
+}
+.rounded-border(@radius, @radius-tl)
+{
+    -webkit-border-top-left-radius: @radius-tl;
+    -moz-border-radius-topleft: @radius-tl;
+            border-top-left-radius: @radius-tl;
+    -webkit-border-top-right-radius: @radius;
+    -moz-border-radius-topright: @radius;
+            border-top-right-radius: @radius;
+    -webkit-border-bottom-right-radius: @radius;
+    -moz-border-radius-bottomright: @radius;
+            border-bottom-right-radius: @radius;
+    -webkit-border-bottom-left-radius: @radius;
+    -moz-border-radius-bottomleft: @radius;
+            border-bottom-left-radius: @radius;
+}
+.active
+{
+    display: block;
+}
+.grayscale100
+{
+    -webkit-filter: grayscale(100%);
+       -moz-filter: grayscale(100%);
+        -ms-filter: grayscale(100%);
+         -o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: url(grayscale.svg#greyscale); /* Firefox 4+ */
+            filter: gray; /* IE 6-9 */
+    -webkit-filter: grayscale(1);
+};
+
+.grayscale0
+{
+    -webkit-filter: grayscale(0%);
+       -moz-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+         -o-filter: grayscale(0%);
+            filter: none;
+    -webkit-filter: grayscale(0);
+};
+@font-face
+{
+    font-family: exo2;
+
+    src: url(../fonts/exo2.0.ttf);
+}
